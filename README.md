@@ -21,13 +21,13 @@
   <table>
     <tr>
       <td align="center">
-        <img src="assets\tradition.png" alt="Traditional Global Despill" width="400"/>
+        <img src="assets/tradition.png" alt="Traditional Global Despill" width="400"/>
         <br />
         <b>Traditional Global Despill</b><br/>
         (Note damaged interior colors)
       </td>
       <td align="center">
-        <img src="assets\aged_dispill.png" alt="AGED Edge-Only Despill" width="400"/>
+        <img src="assets/aged_dispill.png" alt="AGED Edge-Only Despill" width="400"/>
         <br />
         <b>AGED Edge-Only Despill</b><br/>
         (Perfect interior preservation)
