@@ -15,9 +15,10 @@
 
 **Zero-parameter, Alpha-aware chroma key spill suppression for real-time compositing.**
 
+
 ## ✨ Visual Results
 
-<p align="center">
+<div align="center">
   <table>
     <tr>
       <td align="center">
@@ -34,11 +35,9 @@
       </td>
     </tr>
   </table>
-</p>
+</div>
 
 > **Note:** AGED only processes pixels with `0 < α < 1`, leaving fully opaque areas completely untouched.
-
-AGED is a lightweight, high-performance despill algorithm specifically designed for **alpha boundary pixels** ($0 < \alpha < 1$).
 
 
 AGED is a lightweight, high-performance despill algorithm specifically designed for **alpha boundary pixels** ($0 < \alpha < 1$). Unlike traditional global despill methods, AGED applies conditional channel replacement only to edge pixels where green spill actually occurs during compositing, preserving interior colors perfectly.
