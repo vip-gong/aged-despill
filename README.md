@@ -7,7 +7,38 @@
 [![Build Status](https://github.com/yourusername/aged-despill/actions/workflows/build.yml/badge.svg)]()
 
 **Zero-parameter, Alpha-aware chroma key spill suppression for real-time compositing.**
+# Alpha-Gated Edge Despill (AGED)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![C++](https://img.shields.io/badge/C%2B%2B-17-blue.svg)]()
+[![CUDA](https://img.shields.io/badge/CUDA-11.0-green.svg)]()
+
+**Zero-parameter, Alpha-aware chroma key spill suppression for real-time compositing.**
+
+## ✨ Visual Results
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="assets\tradition.png" alt="Traditional Global Despill" width="400"/>
+        <br />
+        <b>Traditional Global Despill</b><br/>
+        (Note damaged interior colors)
+      </td>
+      <td align="center">
+        <img src="assets\aged_dispill.png" alt="AGED Edge-Only Despill" width="400"/>
+        <br />
+        <b>AGED Edge-Only Despill</b><br/>
+        (Perfect interior preservation)
+      </td>
+    </tr>
+  </table>
+</p>
+
+> **Note:** AGED only processes pixels with `0 < α < 1`, leaving fully opaque areas completely untouched.
+
+AGED is a lightweight, high-performance despill algorithm specifically designed for **alpha boundary pixels** ($0 < \alpha < 1$).
 
 
 AGED is a lightweight, high-performance despill algorithm specifically designed for **alpha boundary pixels** ($0 < \alpha < 1$). Unlike traditional global despill methods, AGED applies conditional channel replacement only to edge pixels where green spill actually occurs during compositing, preserving interior colors perfectly.
