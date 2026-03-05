@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.18)
+project(aged_despill LANGUAGES CXX CUDA)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_ARCHITECTURES NATIVE)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# Source files
+set(AGED_SOURCES
+    src/aged_scalar.cpp
+    src/aged_avx2.cpp
+)
+
+# CUDA source
+set(AGED_CUDA_SOURCES
+    src/aged_cuda.cu
+)
+
+# Create library
+add_library(aged_despill STATIC ${AGED_SOURCES})
+
+# Optional CUDA library
+if(CMAKE_CUDA_COMPILER)
+    add_library(aged_despill_cuda STATIC ${AGED_CUDA_SOURCES})
+    target_link_libraries(aged_despill_cuda PUBLIC aged_despill)
+endif()
+
+# Python bindings (requires Cython)
+find_package(Cython QUIET)
+if(Cython_FOUND)
+    add_subdirectory(python)
+endif()
